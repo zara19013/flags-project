@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +33,93 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex;
+  margin-top: 3%;
+  height: 100vh;
+  margin-left: 10px;
+  background-color: 1 #f4f4f4;
+}
+
+.card-container {
+  width: 335px;
+  max-width: 335px;
+  min-height: 280px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.1);
+  .flag {
+    padding: 0;
+    width: 100% ;
+    border: 1px solid #ccc;
+    /* height: 160px; */
+    picture-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px 5px 0 0;
+    }
+  }
+  .description {
+    padding: 16px;
+    font-size: 14px;
+    font: optional;
+    
+    .countryName {
+      font-weight: 800;
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .population,
+    .region,
+    .capital {
+      line-height: 1.7em;
+    }
+  /* }
+    .content-title {
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+    }
+    
+    .content-text {
+      font-size: 1rem;
+      color: #333;
+    }
+}
+/* } */
+
+}
+
+  
+
+      /*.content-container {
+        flex: 1; This will make the content take up equal space in a row 
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+}
+
+/* .content-card {
+  border: 2px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  max-width: 500px;
+  margin: 16px;
+}
+
+.content-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.content-text {
+  font-size: 1rem;
+  color: #333;
+} */
