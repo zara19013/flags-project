@@ -2,7 +2,7 @@
 import React from 'react';
 import './App.css'
 //import ReactDOM from 'react-dom';
-// import CountryCard from './CountryCard';
+
 
 export const PictureCard = ({ imageUrl, countryName, population, region, capital }) => {
   return (
@@ -24,7 +24,8 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
         {capital}
       </div>
       </div>
-    </div>
+      
+    </div>   
   );
 };
 
@@ -44,16 +45,79 @@ function App() {
           />
         </div>
       </div>
+
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
+      <div className="card-container">
+        <div className="flag">
+          <PictureCard 
+          imageUrl={imageUrl}
+          countryName="Pakistan"
+          population="23456789"
+          region="Asia"
+          capital="Islambad"
+          />
+        </div>
+      </div>
       </div>
 
   );
 }
 
 export default App;
-
-
-
-
 
 
 
