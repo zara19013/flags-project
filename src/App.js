@@ -1,9 +1,9 @@
- import React, {useState, useEffect }  from 'react';
+ import React, {createContext, useState, useEffect }  from 'react';
 import './App.css'
 import axios from 'axios';
 import Header from './Header';
 
-
+export const RootContext = createContext();
 export const PictureCard = ({ imageUrl, countryName, population, region, capital }) => {
   return (
     <div className='card-container'>
@@ -18,7 +18,7 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
         <span className="title">Region: </span>
         {region}
       </div>
-      <div className="capital">
+      <div className="capitanpl">
         <span className="title">Capital: </span>
         {capital}
       </div>

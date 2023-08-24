@@ -11,10 +11,10 @@
 }
 
 .App-header {
-  background-color: #676767;
+  background-color: #ffffff;
    display: flex;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .App-link {
   color: #61dafb;
@@ -30,14 +30,12 @@
 }
 
 .App { 
-  /* display:flex; */
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* border: 1px solid red; */
-  margin-top: 3%;
-  /* height: 100vh; */
-  margin-left: 30px;
-  background-color: #ffffff;
+  background-color: hsl(0, 0%, 98%);
+  margin-top: 10px;
+  padding-bottom: 10px;
+
 }
 
 
@@ -45,18 +43,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content:space-evenly ;
-  margin-top: 10px;
+  
   /* width: 280px; */
   /* height: 350px auto; */
-
   .flag {
     width: 280px;
+    border-radius: 0.5rem;
+    margin-top: 30px ;
+    background-color: #ffffff;
+    justify-content: space-between ;
     /* border: thin solid red; */
     box-shadow:  0 5px 5px rgba(0, 0, 0, 0.1);
     .picture-image {
+      box-sizing: border-box;
       width: 100%;
-      height: 230px;
-      border: 1px solid #b3b3b3;
+      height: 215px;
+      border-radius: 0.5rem;
+      border: 1px solid #e3e3e3;
+    
       
     }
   }
@@ -64,10 +68,10 @@
     padding: 10px;
     font-size: 14px;
     font: optional;
-
+    justify-content:first baseline;
     .countryName {
       font-weight: 800;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     }
     .population,
