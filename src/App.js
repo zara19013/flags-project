@@ -1,13 +1,16 @@
- import React, {createContext, useState, useEffect }  from 'react';
-import './App.css'
-import axios from 'axios';
-import Header from './Header';
 
-export const RootContext = createContext();
+import React, {useState, useEffect }  from 'react';
+import React from 'react';
+import './App.css'
+//import ReactDOM from 'react-dom';
+
+
 export const PictureCard = ({ imageUrl, countryName, population, region, capital }) => {
   return (
+
     <div className='card-container'>
-      <img src={imageUrl} alt="countryName" className="picture-image" />
+      <img src={imageUrl} alt="countryName" className="flag" />
+
       <div className="description">
        <h2 className="countryName">{countryName}</h2> 
       <div className="population">
@@ -18,7 +21,8 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
         <span className="title">Region: </span>
         {region}
       </div>
-      <div className="capitanpl">
+
+      <div className="capital">
         <span className="title">Capital: </span>
         {capital}
       </div>
@@ -29,6 +33,7 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
 };
 
 function App() {
+
  const [countries, setcountries]= useState([]);
   useEffect(()=>{
     axios.get("https://restcountries.com/v3.1/all")
@@ -52,24 +57,10 @@ function App() {
             />
           </div>
         </div>
-      ))}
-     
-        
+      ))}   
       </div>
-      {/* <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div> */}
       </div>
 
   );
 }
-
 export default App;

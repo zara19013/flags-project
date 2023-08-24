@@ -29,6 +29,7 @@
   }
 }
 
+
 .App { 
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -61,17 +62,23 @@
       border-radius: 0.5rem;
       border: 1px solid #e3e3e3;
     
-      
+
+
+       
+     
+>>>>>>> master
     }
   }
   .description {
     padding: 10px;
     font-size: 14px;
     font: optional;
-    justify-content:first baseline;
+
+    
     .countryName {
       font-weight: 800;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+>>>>>>> master
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     }
     .population,
@@ -82,18 +89,4 @@
 
 }
 
-}
-@media screen and (max-width: 375px) {
-  .card-container {
-    width: 100%;
-    height: auto;
-    .flag {
-      width: 100%;
-      height: auto;
-    }
-    .description {
-      font-size: 18px;
-      padding: 20px 30px 40px;
-    }
-  }
 }
