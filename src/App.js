@@ -1,4 +1,5 @@
-// import React, {useState, useEffect }  from 'react';
+
+import React, {useState, useEffect }  from 'react';
 import React from 'react';
 import './App.css'
 //import ReactDOM from 'react-dom';
@@ -6,9 +7,10 @@ import './App.css'
 
 export const PictureCard = ({ imageUrl, countryName, population, region, capital }) => {
   return (
-    // <div className="card-container">
+
     <div className='card-container'>
       <img src={imageUrl} alt="countryName" className="flag" />
+
       <div className="description">
        <h2 className="countryName">{countryName}</h2> 
       <div className="population">
@@ -19,6 +21,7 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
         <span className="title">Region: </span>
         {region}
       </div>
+
       <div className="capital">
         <span className="title">Capital: </span>
         {capital}
@@ -31,116 +34,33 @@ export const PictureCard = ({ imageUrl, countryName, population, region, capital
 
 function App() {
 
-  const imageUrl = 'https://cdn.countryflags.com/thumbs/pakistan/flag-400.png';
+ const [countries, setcountries]= useState([]);
+  useEffect(()=>{
+    axios.get("https://restcountries.com/v3.1/all")
+    .then(response => setcountries(response.data))
+    .catch(error => console.error(error))
+  })
   return (
 <div className="App">
+  <Header/>
+      
       <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
+      {countries.map(country => (
+        <div className="card-container" key={country.name.common}>
+          <div className="flag">
+            <PictureCard
+              imageUrl={country.flags.png}
+              countryName={country.name.common}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />
+          </div>
         </div>
-      </div>
-
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="flag">
-          <PictureCard 
-          imageUrl={imageUrl}
-          countryName="Pakistan"
-          population="23456789"
-          region="Asia"
-          capital="Islambad"
-          />
-        </div>
+      ))}   
       </div>
       </div>
 
   );
 }
-
 export default App;
-
-
-
-
-// const App = () => {
-
-//   return (<div className="App">
-  
-// </div>)
-//   // const [Countries, setcountries]= useState([]);
-//   // useEffect(() => {
-//   //   fetch('https://restcountries.com/v3.1/all')
-//   //     .then(response => response.json())
-//   //     .then(data => {
-//   //       setcountries(data);
-//   //     })
-//   //     .catch(error => {
-//   //       console.error('Error fetching data:', error);
-//   //     });
-//   // }, []);
-//   // return
-  
-// };
- 
-// export default App;
-
