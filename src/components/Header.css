@@ -29,16 +29,14 @@
     justify-content: space-between;
     line-height: 1;
     padding-inline: var(--h-padding);
-    /* .headerTitle {
-      font-size: 24px;
-    } */
+   
     .headerTitle {
-      text-decoration: none; /* Remove default underline */
-      color: #000001; /* Set the link color */
-      transition: color 0.3s; /* Add a smooth color transition on hover */
+      text-decoration: none;
+      color: #000001; 
+      transition: color 0.3s;
     }
     .headerTitle:hover {
-      color: #272b2e; /* Set the link color on hover */
+      color: #272b2e; 
     }
     
   }
@@ -51,29 +49,21 @@
   }
 }
 
-
 a {
   font-size: 28px;
-  text-decoration: none; /* Remove underline */
-  color: #333; /* Default link color */
-  transition: color 1s; /* Add transition for smooth color change */
-  /* Add your other styling here */
+  text-decoration: none; 
+  color: #333;
+  transition: color 1s;
 }
 
 a:hover {
-  color: #9da2a8; /* Change color on hover */
-  cursor: pointer; /* Show pointer cursor on hover */
+  color: #9da2a8;
+  cursor: pointer; 
 }
 
 a:active {
-  color: #4b5259; /* Change color when link is clicked */
+  color: #4b5259;
 }
-
-
-
-
-
-
 
 @media screen and (max-width: 375px) {
   .header {
