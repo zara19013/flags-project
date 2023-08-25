@@ -42,7 +42,7 @@
   }
 }
 
-/* Media query for phones */
+
 @media screen and (max-width: 480px) {
   .feild .feild_header {
     flex-direction: column;

@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
-import Filter from './components/Home page/filter';
-import { Card } from './components/Home page/card';
+import { Card } from './components/homepage/card';
+import Filter from './components/homepage/filter';
 import Header from './components/Header';
 import axios from 'axios';
 export const RootContext = createContext(); 

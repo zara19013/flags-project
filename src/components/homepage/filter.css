@@ -39,12 +39,12 @@
 
   .selectList {
     position: relative;
-    top: 30%; /* Position the dropdown list below the selectTitle */
+    top: 30%; 
     background: white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
-    min-width: 170px; /* Set a minimum width to match the selectTitle */
+    min-width: 170px; 
     border-radius: 3px;
   }
   
