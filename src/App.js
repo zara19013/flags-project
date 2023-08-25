@@ -1,3 +1,4 @@
+
 import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import { Card } from './components/homepage/card';
@@ -5,11 +6,13 @@ import Filter from './components/homepage/filter';
 import Header from './components/Header';
 import axios from 'axios';
 export const RootContext = createContext(); 
-function App() {
-  const [countriesData, setCountriesData] = useState([]);
-  const [filteredCountries, setFilteredCountries] = useState([]);
 
-  useEffect(() => {
+
+function App() {
+
+ const [countries, setcountries]= useState([]);
+  useEffect(()=>{
+
     axios.get("https://restcountries.com/v3.1/all")
       .then(response => {
         setCountriesData(response.data);
@@ -44,11 +47,18 @@ function App() {
               />
             </div>
           </div>
+
         ))}
       </div>
     </div>
   </div>
+
+        </div>
+      ))}   
+      </div>
+      </div>
+
+
   );
 }
-
 export default App;
