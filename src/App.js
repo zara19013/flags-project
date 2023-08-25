@@ -1,63 +1,65 @@
 
-import React, { createContext, useEffect, useState } from 'react';
-import './App.css';
-import { Card } from './components/homepage/card';
-import Filter from './components/homepage/filter';
-import Header from './components/Header';
-import axios from 'axios';
-export const RootContext = createContext(); 
+import React, {useState, useEffect }  from 'react';
+import React from 'react';
+import './App.css'
+//import ReactDOM from 'react-dom';
 
+
+export const PictureCard = ({ imageUrl, countryName, population, region, capital }) => {
+  return (
+
+    <div className='card-container'>
+      <img src={imageUrl} alt="countryName" className="flag" />
+
+      <div className="description">
+       <h2 className="countryName">{countryName}</h2> 
+      <div className="population">
+        <span className="title">Population: </span>
+        {population}
+      </div>
+      <div className="region">
+        <span className="title">Region: </span>
+        {region}
+      </div>
+
+      <div className="capital">
+        <span className="title">Capital: </span>
+        {capital}
+      </div>
+      </div>
+      
+    </div>   
+  );
+};
 
 function App() {
 
  const [countries, setcountries]= useState([]);
   useEffect(()=>{
-
     axios.get("https://restcountries.com/v3.1/all")
-      .then(response => {
-        setCountriesData(response.data);
-        setFilteredCountries(response.data);
-      })
-      .catch(error => console.error(error))
-  }, []);
-  const handleFilterChange = (filteredData) => {
-    setFilteredCountries(filteredData);
-  };
-
-
+    .then(response => setcountries(response.data))
+    .catch(error => console.error(error))
+  })
   return (
-
-    <div className="App">
-    <Header />
-    <Filter countriesData={countriesData} onFilterChange={handleFilterChange} />
-
-    <div className="contents">
-      <div className="feild-header">
-      </div>
+<div className="App">
+  <Header/>
+      
       <div className="card-container">
-        {filteredCountries.map(country => (
-          <div className="card-container" key={country.name.common}>
-            <div className="flag">
-              <Card
-                imageUrl={country.flags.png}
-                countryName={country.name.common}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-              />
-            </div>
+      {countries.map(country => (
+        <div className="card-container" key={country.name.common}>
+          <div className="flag">
+            <PictureCard
+              imageUrl={country.flags.png}
+              countryName={country.name.common}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />
           </div>
-
-        ))}
-      </div>
-    </div>
-  </div>
-
         </div>
       ))}   
       </div>
       </div>
-
 
   );
 }
