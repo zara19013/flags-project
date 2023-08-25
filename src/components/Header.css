@@ -1,0 +1,87 @@
+
+.modeToggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.modeIcon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.modeText {
+  font-size: 16px;
+}
+
+.header {
+  padding: 10px 40px;
+  font-weight: 500; 
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px 0 var(--shadow-color);
+  .container {
+    max-width: var(--max-width);
+    margin:  auto;
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1;
+    padding-inline: var(--h-padding);
+    /* .headerTitle {
+      font-size: 24px;
+    } */
+    .headerTitle {
+      text-decoration: none; /* Remove default underline */
+      color: #000001; /* Set the link color */
+      transition: color 0.3s; /* Add a smooth color transition on hover */
+    }
+    .headerTitle:hover {
+      color: #272b2e; /* Set the link color on hover */
+    }
+    
+  }
+  p {
+    margin: 0;
+    cursor: pointer;
+  }
+  .moonIcon {
+    margin-right: 10px;
+  }
+}
+
+
+a {
+  font-size: 28px;
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Default link color */
+  transition: color 1s; /* Add transition for smooth color change */
+  /* Add your other styling here */
+}
+
+a:hover {
+  color: #9da2a8; /* Change color on hover */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+a:active {
+  color: #4b5259; /* Change color when link is clicked */
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 375px) {
+  .header {
+    padding: 20px;
+    .container{
+      .headerTitle {
+        font-size: 20px;
+      }
+    }
+  }
+}
