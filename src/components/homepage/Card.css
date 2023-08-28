@@ -31,8 +31,9 @@
        font-weight: 800;
        padding-top: 5px;
       padding-bottom: 5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-    }
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    } */
+  }
     .population,
     .region,
     .capital {
