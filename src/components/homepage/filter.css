@@ -8,6 +8,7 @@
     width: 12em;
     cursor: pointer;
     float : right;
+     margin-right: 70px; 
     
   }
   
@@ -15,11 +16,10 @@
     position: absolute;
     display: inline-block; 
     right: 0;
-
     /* display: flex;
     align-items: center;
     justify-content: flex-end; /* Align to the right side */
-    margin-right: 20px; 
+    margin-right: 70px; 
     /* Make the container inline-block to wrap the content */
   }
   
@@ -74,7 +74,6 @@
       li {
         display: block;
         text-align: left;
-        margin-left: 10px;
         padding: 5px 15px;
         color: darkgray;
         cursor: pointer;

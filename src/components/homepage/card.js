@@ -10,15 +10,15 @@ export const Card = ({ imageUrl, countryName, population, region, capital }) => 
     <div className="description">
      <h2 className="countryName">{countryName}</h2> 
     <div className="population">
-      <span className="title">Population: </span>
+      <span className="title"><b>Population: </b></span>
       {population}
     </div>
     <div className="region">
-      <span className="title">Region: </span>
+      <span className="title"><b>Region: </b></span>
       {region}
     </div>
     <div className="Capital">
-      <span className="title">Capital: </span>
+      <span className="title"><b>Capital: </b></span>
       {capital}
     </div>
     </div>
