@@ -1,0 +1,107 @@
+/* darkmode.css */
+
+/* Define dark mode styles */
+/* .app.dark {
+    background: verydarkblue;
+    color: white;
+  }
+  
+  .app.dark header {
+    background: darkblue;
+    box-shadow: 0 3px 4px shadowHeader;
+  }
+  
+  .app.dark .contents {
+    background: verydarkblue;
+  }
+  
+  .app.dark .card,
+  .app.dark .searchBox,
+  .app.dark .selectTitle,
+  .app.dark .selectList {
+    background:darkblue;
+    box-shadow: 3px 3px 4px shadowInput;
+  }
+  
+  .app.dark .backBtn,
+  .app.dark .borderCountry {
+    background: darkblue;
+    box-shadow: 0 0 4px 1px shadowInput;
+    color: white;
+  }
+  
+  .app.dark .selectList li {
+    background: darkblue;
+    color: white;
+  } */
+  
+  /* Include other dark mode styles as needed */
+  
+
+  /* darkmode.css */
+
+/* Define dark mode styles */
+.App.dark {
+    background: rgb(23, 23, 23);
+    color: white;
+}
+
+.App.dark header {
+    
+      background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 2px 4px 0 var(--shadow-color);
+
+}
+.App.dark .headerTitle {
+    color: white;
+}
+.App.dark .contents {
+    background: hsl(207, 26%, 17%);
+   color: white;
+
+}
+
+
+
+    .App.dark .flag
+{
+  width: 270px;
+  height: 310 auto ;
+  border-radius: 0.5rem;
+  margin-top: 30px ;
+  background-color: hsl(209, 23%, 22%);
+
+}
+
+.App.dark .picture-image {
+  box-sizing: border-box;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border: 1px solid #575656;   
+ }
+
+.App.dark .feild {
+    background: hsl(207, 26%, 17%);
+}
+.App.dark .searchBox
+{
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 3px 3px 4px shadow;
+}
+
+.App.dark .selectTitle,
+.App.dark .selectList {
+  background-color: hsl(209, 23%, 22%);
+    box-shadow: 3px 3px 4px shadowInput;
+}
+
+.App.dark .backBtn,
+.App.dark .borderCountry {
+    background: hsl(207, 26%, 17%);
+    box-shadow: 0 0 4px 1px shadowInput;
+    color: rgb(33, 36, 43);;
+}
+
+.App.dark .selectList li {
+    background:hsl(207, 26%, 17%);
+    color: white;
+}

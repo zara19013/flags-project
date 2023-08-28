@@ -8,9 +8,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #ece9e9;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  border: #61dafb;
+  /* margin-top: 10px;
+  padding-bottom: 10px; */
 
 }
 .contents {
