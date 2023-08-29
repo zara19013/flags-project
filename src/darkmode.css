@@ -42,10 +42,14 @@
 
 /* Define dark mode styles */
 .App.dark {
-    background: rgb(23, 23, 23);
+  background: hsl(207, 26%, 17%);
     color: white;
 }
 
+.App.dark .contents
+{
+  background: hsl(207, 26%, 17%);
+}
 .App.dark header {
     
       background-color: hsl(209, 23%, 22%);
@@ -104,4 +108,18 @@
 .App.dark .selectList li {
     background:hsl(207, 26%, 17%);
     color: white;
+}
+
+.App.dark .backBtn
+{
+  box-shadow:  0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: hsl(210, 23%, 22%);
+  color: lightgray;
+}
+
+.App.dark .borderCountry
+{
+  color:lightgray;
+  background-color: hsl(209, 23%, 22%);
+   border: none;
 }

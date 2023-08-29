@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import { Card } from './components/homepage/card';
 import Filter from './components/homepage/filter';
+import DetailsPage from './components/Detail/Detail';
 import Header from './components/Header';
 import axios from 'axios';
 import './darkmode.css'; 
@@ -10,60 +11,6 @@ import './darkmode.css';
 export const RootContext = createContext(); 
 
 
-// function App() {
-
-//  const [countries, setcountries]= useState([]);
-
-//   useEffect(()=>{
-
-//     axios.get("https://restcountries.com/v3.1/all")
-//       .then(response => {
-//         setCountriesData(response.data);
-//         setFilteredCountries(response.data);
-//       })
-//       .catch(error => console.error(error))
-//   }, []);
-//   const handleFilterChange = (filteredData) => {
-//     setFilteredCountries(filteredData);
-//   };
-
-
-//   return (
-
-//     <div className="App">
-//     <Header />
-//     <Filter countriesData={countriesData} onFilterChange={handleFilterChange} />
-
-//     <div className="contents">
-//       <div className="feild-header">
-//       </div>
-//       <div className="card-container">
-//         {filteredCountries.map(country => (
-//           <div className="card-container" key={country.name.common}>
-//             <div className="flag">
-//               <Card
-//                 imageUrl={country.flags.png}
-//                 countryName={country.name.common}
-//                 population={country.population}
-//                 region={country.region}
-//                 capital={country.capital}
-//               />
-//             </div>
-//           </div>
-
-//         ))}
-//       </div>
-//     </div>
-//   </div>
-
-        
-//       // ))}   
-    
-
-
-//   );
-// }
-// export default App;
 function App() {
   const [countriesData, setCountriesData] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -92,13 +39,11 @@ function App() {
       <div className={`App ${colorMode === 'dark' ? 'dark' : ''}`}>
     <div className="App">
     <Header />
-
-       
-    <Filter countriesData={countriesData} onFilterChange={handleFilterChange} />
-
-    <div className="contents">
+     {/* <Filter countriesData={countriesData} onFilterChange={handleFilterChange} /> */}
+    <DetailsPage/>
+    {/* <div className="contents">
       <div className="feild-header">
-      </div>
+     
       <div className="card-container">
         {filteredCountries.map(country => (
           <div className="card-container" key={country.name.common}>
@@ -111,13 +56,14 @@ function App() {
                 capital={country.capital}
               />
             </div>
+            
           </div>
         ))}
       </div>
-    </div>
+       </div>
+    </div> */}
   </div>
   </div>
-
   </RootContext.Provider>
   );
 }
