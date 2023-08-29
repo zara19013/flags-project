@@ -12,7 +12,7 @@ body {
 
 .leftFlag {
   flex: 1;
-  padding-right: 60px;
+  padding-right: 50px;
 }
 
 .leftFlag img {
@@ -23,6 +23,7 @@ body {
 
 .rightDetail {
   flex: 2;
+  margin-left: -60px;
 }
 
 .countryName {
@@ -36,15 +37,19 @@ body {
 
 .wrapInsideDetail {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+
 }
 
 .leftInsideDetail
 {
-  margin-right: 50px;
+  margin-right: 30px;
+  font-size: 16px;
+  
 }
 .rightInsideDetail {
   flex: 1;
+  font-size: 16px;
 }
 
 .borderCountries {
