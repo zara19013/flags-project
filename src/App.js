@@ -15,7 +15,6 @@ function App() {
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [colorMode, setColorMode] = useState("light");
 
-  
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
@@ -36,28 +35,26 @@ function App() {
   return (
     <RootContext.Provider value={{ colorMode, toggleColorMode }}>
       <div className={`App ${colorMode === "dark" ? "dark" : ""}`}>
-        {/* <div className="App"> */}
-          <Header />
-
-          {/* <Filter countriesData={countriesData} onFilterChange={handleFilterChange} /> */}
-           {/* <Card countries={filteredCountries} /> */}
-          <BrowserRouter>
-            <Routes>
-              {/* <Route path="/" element={<Card countries={filteredCountries} />  } /> */}
-              <Route
-              path="/" element={ <>
-              <Filter countriesData={countriesData}onFilterChange={handleFilterChange}/>
-              <Card countries={filteredCountries} />
+        <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Filter
+                    countriesData={countriesData}
+                    onFilterChange={handleFilterChange}
+                  />
+                  <Card countries={filteredCountries} />
                 </>
               }
             />
-              {/* <Filter countriesData={countriesData} onFilterChange={handleFilterChange} /> */}
-              <Route path="/details" element={<DetailsPage />} />
-            </Routes>
-          </BrowserRouter>
 
-        </div>
-      {/* </div> */}
+            <Route path="/details" element={<DetailsPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </RootContext.Provider>
   );
 }
