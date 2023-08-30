@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export const RootContext = createContext();
 
-
 function App() {
   const [countriesData, setCountriesData] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -51,14 +50,11 @@ function App() {
                 </>
               }
             />
-              <Route path="/details" element={<DetailsPage />} />
+            <Route path="/details" element={<DetailsPage />} />
             <Route path="/border-details" element={<DetailsPage />} />
-            </Routes>
-         
-          
-          </BrowserRouter>
-
-        </div>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </RootContext.Provider>
   );
 }

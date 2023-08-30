@@ -13,18 +13,18 @@ function DetailsPage() {
   const [borderCountryNames, setBorderCountryNames] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     axios
-      .get(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+      .get(`${apiBaseUrl}alpha/${countryCode}`)
       .then((response) => {
         const fetchedCountryData = response.data[0];
         setCountryData(fetchedCountryData);
 
         const borderPromises = fetchedCountryData.borders?.map(
           (borderCountryCode) =>
-            axios.get(
-              `https://restcountries.com/v3.1/alpha/${borderCountryCode}`
-            )
+            axios.get(`${apiBaseUrl}alpha/${borderCountryCode}`)
         );
 
         if (borderPromises) {
