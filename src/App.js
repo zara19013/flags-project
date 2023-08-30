@@ -53,7 +53,13 @@ function App() {
             />
               {/* <Filter countriesData={countriesData} onFilterChange={handleFilterChange} /> */}
               <Route path="/details" element={<DetailsPage />} />
+
+              <Route path="/details" element={<DetailsPage />} />
+            {/* Add a route for the border country details */}
+            <Route path="/border-details" element={<DetailsPage />} />
             </Routes>
+         
+          
           </BrowserRouter>
 
         </div>
