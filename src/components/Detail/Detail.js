@@ -16,7 +16,7 @@ function DetailsPage() {
   useEffect(() => {
     axios
       .get(`https://restcountries.com/v3.1/alpha/${countryCode}`)
-     
+
       .then((response) => {
         const fetchedCountryData = response.data[0];
         setCountryData(fetchedCountryData);
@@ -67,7 +67,6 @@ function DetailsPage() {
                 </p>
                 <p>
                   <strong>Capital:</strong>{" "}
-                  
                   {Array.isArray(countryData.capital)
                     ? countryData.capital.join(", ")
                     : countryData.capital}
@@ -96,10 +95,8 @@ function DetailsPage() {
             <div className="borderCountries">
               <div className="title">Border Countries:</div>
               <div className="wrapBorderCountries">
-                {countryData.borders?.map((borderCountry, index) => (
-                  <button className="borderCountry" key={index}>
-                    {borderCountry}
-                  </button>
+                {countryData.borders?.map((borderCountry) => (
+                  <button className="borderCountry">{borderCountry}</button>
                 ))}
               </div>
             </div>

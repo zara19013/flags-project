@@ -16,7 +16,6 @@ function Header() {
         >
           <p> Where in the world?</p>
         </a>
-
         <div className="modeToggle" onClick={toggleColorMode}>
           <i className="modeIcon fas fa-moon"></i>
           <p className="modeText">Dark Mode</p>
