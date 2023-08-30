@@ -6,7 +6,7 @@
 
   .flag {
     width: 270px;
-    height: 310 auto;
+    height: 310px auto;
     border-radius: 0.5rem;
     margin-top: 30px;
     background-color: #ffffff;
@@ -16,7 +16,6 @@
       width: 100%;
       min-height: 170px;
       max-height: 170px;
-      /* min-height: 200px; */
       border-radius: 0.5rem 0.5rem 0 0;
       border: 1px solid #e3e3e3;
     }
@@ -25,10 +24,8 @@
     padding: 12px;
     font-size: 15px;
     font-family: "Nunito Sans", sans-serif;
-    /* justify-content: space-evenly; */
 
     .countryName {
-      /* padding-left: 10px; */
       font-weight: 700;
       padding-top: 1px;
       padding-bottom: 2px;
