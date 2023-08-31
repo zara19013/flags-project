@@ -50,8 +50,8 @@ function App() {
                 </>
               }
             />
-
             <Route path="/details" element={<DetailsPage />} />
+            <Route path="/border-details" element={<DetailsPage />} />
           </Routes>
         </BrowserRouter>
       </div>
