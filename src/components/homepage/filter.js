@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/js/solid";
 import "./filter.css";
 import "./feild_container.css";
 import { fetchCountriesByRegion } from "../../Api/api";
+import { filterValues } from "../../const";
 
 function Filter({ countriesData, onFilterChange }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ function Filter({ countriesData, onFilterChange }) {
     setTitle(region);
     setIsOpen(false);
   }
-  const filterValues = ["All", "Africa", "Americas", "Antarctic", "Asia", "Europe", "Oceania"];
+  
   return (
     <div className="feild">
       <div className="feild_container">

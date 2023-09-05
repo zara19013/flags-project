@@ -1,6 +1,6 @@
 import axios from "axios";
+import { apiBaseUrl } from "../const";
 
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 export async function fetchCountriesByRegion(region) {
   try {
