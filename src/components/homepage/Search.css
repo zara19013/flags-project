@@ -1,20 +1,18 @@
-
 .inputBox {
   display: flex;
   width: 350px;
   margin: 30px 0;
-  margin-left: 50px;
   padding: 0;
   height: 47px;
-  box-shadow: 0  2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .searchIcon {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  left: 10px;
-  color: darkgray;
+  left: 20px;
+  color: rgb(87, 87, 87);
 }
 
 .searchBox {
@@ -26,21 +24,28 @@
   background: white;
   box-shadow: 3px 3px 4px shadow;
   border-radius: 3px;
-  color: rgb(0, 0, 0);
+  color: rgb(85, 81, 81);
 }
-
+.searchBox::placeholder {
+  color: rgb(85, 81, 81);
+}
 .searchBox:focus {
   outline: 0;
 }
-
-
-
 @media screen and (max-width: 375px) {
   .inputBox {
-    width: 100%;
+    width: 100px;
     margin: 15px 0;
     .searchBox {
       width: 100%;
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .inputBox {
+    width: 20rem;
+  }
+  .searchBox {
+    width: 100%;
   }
 }

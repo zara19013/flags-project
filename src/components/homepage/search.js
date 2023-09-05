@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Search.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./Search.css";
 
 function SearchInput({ onSearch }) {
-  const [searchText, setSearchText] = useState('');
-
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+  const [searchText, setSearchText] = useState("");
   const handleInputChange = (event) => {
     setSearchText(event.target.value);
   };
@@ -13,12 +13,12 @@ function SearchInput({ onSearch }) {
     if (searchText.trim() === "") {
       return;
     }
-
-    axios.get(`https://restcountries.com/v3.1/name/${searchText}`)
-      .then(response => {
+    axios
+      .get(`${apiBaseUrl}name/${searchText}`)
+      .then((response) => {
         onSearch(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching country data:", error);
       });
   };
@@ -29,12 +29,11 @@ function SearchInput({ onSearch }) {
       <input
         type="text"
         className="searchBox"
-        placeholder="Search by country name"
+        placeholder="Search by country name..."
         value={searchText}
         onChange={handleInputChange}
-        onClick={handleSearchAPI} 
+        onInput={handleSearchAPI}
       />
-
     </div>
   );
 }
