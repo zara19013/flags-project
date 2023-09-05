@@ -6,8 +6,6 @@
 .App {
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* margin-top: 10px;
-  padding-bottom: 10px; */
 }
 .contents {
   max-width: 100%;

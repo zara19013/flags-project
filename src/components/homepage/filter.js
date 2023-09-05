@@ -4,11 +4,11 @@ import "@fortawesome/fontawesome-free/js/fontawesome";
 import "@fortawesome/fontawesome-free/js/solid";
 import "./filter.css";
 import "./feild_container.css";
+import { fetchCountriesByRegion } from "../../Api/api";
 
 function Filter({ countriesData, onFilterChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("Filter by Region");
-  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
   const handleSearch = (searchData) => {
     onFilterChange(searchData);
@@ -18,18 +18,18 @@ function Filter({ countriesData, onFilterChange }) {
     setIsOpen(!isOpen);
   }
 
-  function handleChange(e) {
+  async function handleChange(e) {
     const region = e.target.getAttribute("data-value");
 
     if (region === "All") {
       onFilterChange(countriesData);
     } else {
-      fetch(`${apiBaseUrl}region/${region}`)
-        .then((res) => res.json())
-        .then((data) => {
-          onFilterChange(data);
-        })
-        .catch((err) => console.log("Error: ", err));
+      try {
+        const filteredCountries = await fetchCountriesByRegion(region);
+        onFilterChange(filteredCountries);
+      } catch (error) {
+        console.error("Error filtering countries:", error);
+      }
     }
 
     setTitle(region);

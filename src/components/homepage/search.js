@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { searchCountriesByName } from "../../Api/api";
 import "./Search.css";
 
 function SearchInput({ onSearch }) {
-  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const [searchText, setSearchText] = useState("");
   const handleInputChange = (event) => {
     setSearchText(event.target.value);
   };
 
-  const handleSearchAPI = () => {
+  const handleSearchAPI = async () => {
+    // Mark the function as async
     if (searchText.trim() === "") {
       return;
     }
-    axios
-      .get(`${apiBaseUrl}name/${searchText}`)
-      .then((response) => {
-        onSearch(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching country data:", error);
-      });
+    try {
+      const response = await searchCountriesByName(searchText);
+      onSearch(response);
+    } catch (error) {
+      console.error("Error fetching country data:", error);
+    }
   };
 
   return (

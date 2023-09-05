@@ -12,12 +12,13 @@
   top: 50%;
   transform: translateY(-50%);
   left: 20px;
+  right: 20px;
   color: rgb(87, 87, 87);
 }
 
 .searchBox {
   width: 100%;
-  padding: 20px 40px 20px;
+  padding: 20px 55px 20px;
   border: none;
   margin-left: -16px;
   font-size: 14px;

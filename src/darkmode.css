@@ -11,15 +11,17 @@
   box-shadow: 0 2px 4px 0 var(--shadow-color);
 }
 .App.dark .headerTitle {
-  color: #e6e8ea; 
+  color: #e6e8ea;
 }
 .App.dark .contents {
   background: hsl(207, 26%, 17%);
   color: white;
 }
-
+.App.dark .card-container {
+  color: rgb(255 255 255);
+}
 .App.dark .flag {
-  &:hover{
+  &:hover {
     scale: 1.025;
   }
   background-color: hsl(209, 23%, 22%);
@@ -32,12 +34,10 @@
   border: 1px solid #575656;
 }
 
-.App.dark .description
-{
+.App.dark .description {
   color: rgb(255 255 255);
 }
-.App.dark .description:hover
-{
+.App.dark .description:hover {
   color: rgb(206, 206, 206);
 }
 
@@ -53,7 +53,6 @@
   color: rgb(206, 206, 206);
 }
 .App.dark .searchIcon {
-
   color: rgb(206, 206, 206);
 }
 
@@ -90,3 +89,5 @@
   background-color: hsl(209, 23%, 22%);
   border: none;
 }
+
+

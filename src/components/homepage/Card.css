@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 20px;
-
+  color: rgb(35, 35, 35);
   .flag {
     &:hover {
       scale: 1.025;
@@ -27,7 +27,6 @@
     font-size: 17px;
     padding: 5px 15px;
     font-family: "Nunito Sans", sans-serif;
-
     .countryName {
       font-weight: 700;
       padding-bottom: 5px;

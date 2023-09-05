@@ -4,9 +4,9 @@ import { Card } from "./components/homepage/card";
 import Filter from "./components/homepage/filter";
 import DetailsPage from "./components/Detail/Detail";
 import Header from "./components/Header";
-import axios from "axios";
 import "./darkmode.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { fetchAllCountries } from "./Api/api";
 
 export const RootContext = createContext();
 
@@ -16,14 +16,20 @@ function App() {
   const [colorMode, setColorMode] = useState("light");
 
   useEffect(() => {
-    axios
-      .get("https://restcountries.com/v3.1/all")
-      .then((response) => {
-        setCountriesData(response.data);
-        setFilteredCountries(response.data);
-      })
-      .catch((error) => console.error(error));
+    async function fetchData() {
+      try {
+        const response = await fetchAllCountries();
+        setCountriesData(response);
+        setFilteredCountries(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
   }, []);
+
+
   const handleFilterChange = (filteredData) => {
     setFilteredCountries(filteredData);
   };
