@@ -11,19 +11,21 @@
   box-shadow: 0 2px 4px 0 var(--shadow-color);
 }
 .App.dark .headerTitle {
-  color: white;
+  color: #e6e8ea;
 }
 .App.dark .contents {
   background: hsl(207, 26%, 17%);
   color: white;
 }
-
+.App.dark .card-container {
+  color: rgb(255 255 255);
+}
 .App.dark .flag {
-  width: 270px;
-  height: 310px auto;
-  border-radius: 0.5rem;
-  margin-top: 30px;
+  &:hover {
+    scale: 1.025;
+  }
   background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 2px 5px hsl(207, 26%, 17%);
 }
 
 .App.dark .picture-image {
@@ -32,18 +34,36 @@
   border: 1px solid #575656;
 }
 
+.App.dark .description {
+  color: rgb(255 255 255);
+}
+.App.dark .description:hover {
+  color: rgb(206, 206, 206);
+}
+
 .App.dark .feild {
   background: hsl(207, 26%, 17%);
 }
 .App.dark .searchBox {
   background-color: hsl(209, 23%, 22%);
   box-shadow: 3px 3px 4px shadow;
+  color: rgb(206, 206, 206);
+}
+.App.dark .searchBox::placeholder {
+  color: rgb(206, 206, 206);
+}
+.App.dark .searchIcon {
+  color: rgb(206, 206, 206);
 }
 
 .App.dark .selectTitle,
 .App.dark .selectList {
   background-color: hsl(209, 23%, 22%);
   box-shadow: 3px 3px 4px shadowInput;
+  color: rgb(206, 206, 206);
+}
+.App.dark .downIcon {
+  color: rgb(206, 206, 206);
 }
 
 .App.dark .backBtn,
@@ -55,7 +75,7 @@
 
 .App.dark .selectList li {
   background: hsl(207, 26%, 17%);
-  color: white;
+  color: rgb(206, 206, 206);
 }
 
 .App.dark .backBtn {
@@ -69,3 +89,5 @@
   background-color: hsl(209, 23%, 22%);
   border: none;
 }
+
+

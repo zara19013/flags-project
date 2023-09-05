@@ -22,7 +22,7 @@ export const Card = ({ countries }) => {
                   <span className="title">
                     <b>Population: </b>
                   </span>
-                  {country.population}
+                  {country.population?.toLocaleString()}
                 </div>
                 <div className="region">
                   <span className="title">

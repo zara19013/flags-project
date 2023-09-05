@@ -3,8 +3,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 20px;
-
+  color: rgb(35, 35, 35);
   .flag {
+    &:hover {
+      scale: 1.025;
+    }
     width: 270px;
     height: 310px auto;
     border-radius: 0.5rem;
@@ -21,14 +24,12 @@
     }
   }
   .description {
-    padding: 12px;
-    font-size: 15px;
+    font-size: 17px;
+    padding: 5px 15px;
     font-family: "Nunito Sans", sans-serif;
-
     .countryName {
       font-weight: 700;
-      padding-top: 1px;
-      padding-bottom: 2px;
+      padding-bottom: 5px;
       font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
     }
@@ -36,16 +37,16 @@
   .population,
   .region,
   .capital {
-    line-height: 1.9em;
+    line-height: 1.7em;
   }
 }
 
 @media screen and (max-width: 375px) {
   .card-container {
     justify-content: space-between;
-    justify-content: center;
     width: 100%;
     height: auto;
+    margin-top: 20%;
     .flag {
       width: 100%;
       height: auto;

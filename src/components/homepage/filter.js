@@ -1,45 +1,44 @@
-import React, { useContext, useState } from 'react';
-import { RootContext } from '../../App';
-import axios from 'axios';
-import SearchInput from './search';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import './filter.css';
-import'./feild_container.css';
+import React, { useState } from "react";
+import SearchInput from "./search";
+import "@fortawesome/fontawesome-free/js/fontawesome";
+import "@fortawesome/fontawesome-free/js/solid";
+import "./filter.css";
+import "./feild_container.css";
+import { fetchCountriesByRegion } from "../../Api/api";
+import { filterValues } from "../../const";
 
 function Filter({ countriesData, onFilterChange }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [title, setTitle] = useState("Filter by Region");
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState("Filter by Region");
 
-   
   const handleSearch = (searchData) => {
     onFilterChange(searchData);
   };
 
-    function openList() {
-      setIsOpen(!isOpen);
-    }
-  
-    function handleChange(e) {
-        const region = e.target.getAttribute("data-value");
-        
-        if (region === "All") {
-          onFilterChange(countriesData);
-        } else {
-          fetch(`https://restcountries.com/v3.1/region/${region}`)
-            .then(res => res.json())
-            .then(data => {
-              onFilterChange(data);
-            })
-            .catch(err => console.log("Error: ", err));
-        }
-        
-        setTitle(region);
-        setIsOpen(false);
+  function openList() {
+    setIsOpen(!isOpen);
+  }
+
+  async function handleChange(e) {
+    const region = e.target.getAttribute("data-value");
+
+    if (region === "All") {
+      onFilterChange(countriesData);
+    } else {
+      try {
+        const filteredCountries = await fetchCountriesByRegion(region);
+        onFilterChange(filteredCountries);
+      } catch (error) {
+        console.error("Error filtering countries:", error);
       }
-    return (
-      <div className="feild">
+    }
+
+    setTitle(region);
+    setIsOpen(false);
+  }
+  
+  return (
+    <div className="feild">
       <div className="feild_container">
         <div className="inline-elements">
           <SearchInput onSearch={handleSearch} />
@@ -49,13 +48,11 @@ function Filter({ countriesData, onFilterChange }) {
             </div>
             {isOpen && (
               <ul className="selectList">
-                <li data-value="All" onClick={handleChange}> All</li>
-                <li data-value="Africa" onClick={handleChange}> Africa</li>
-                <li data-value="Americas" onClick={handleChange}> America</li>
-                <li data-value="Antarctic" onClick={handleChange}> Antarctic</li>
-                <li data-value="Asia" onClick={handleChange}> Asia</li>
-                <li data-value="Europe" onClick={handleChange}> Europe</li>
-                <li data-value="Oceania" onClick={handleChange}> Oceania</li>
+                {filterValues.map((value) => (
+                  <li data-value={value} onClick={handleChange} key={value}>
+                    {value}
+                  </li>
+                ))}
               </ul>
             )}
           </div>

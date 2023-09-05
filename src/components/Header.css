@@ -1,44 +1,45 @@
-
 .modeToggle {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-
 .modeIcon {
-  margin-right: 8px;
+  margin-right: 0.3rem;
   font-size: 18px;
 }
 
 .modeText {
   font-size: 16px;
+  font-weight: 700;
+  margin-right: 2rem;
 }
 
 .header {
   padding: 10px 40px;
-  font-weight: 500; 
+  font-weight: 500;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 2px 4px 0 var(--shadow-color);
+  box-shadow: 0 2px 4px rgba(143, 136, 136, 0.5);
   .container {
     max-width: var(--max-width);
-    margin:  auto;
+    margin: auto;
     display: flex;
     height: 4rem;
     align-items: center;
     justify-content: space-between;
     line-height: 1;
     padding-inline: var(--h-padding);
-   
+
     .headerTitle {
       text-decoration: none;
-      color: #000001; 
+      color: #000001;
       transition: color 0.3s;
+      margin-left: 12px;
+      font-weight: 700;
     }
     .headerTitle:hover {
-      color: #272b2e; 
+      color: #767e85;
     }
-    
   }
   p {
     margin: 0;
@@ -51,24 +52,24 @@
 
 a {
   font-size: 28px;
-  text-decoration: none; 
+  text-decoration: none;
   color: #333;
   transition: color 1s;
 }
 
 a:hover {
   color: #a8bdd7;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 a:active {
   color: #4b5259;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 480px) {
   .header {
-    padding: 20px;
-    .container{
+    padding: 5px 20px;
+    .container {
       .headerTitle {
         font-size: 20px;
       }

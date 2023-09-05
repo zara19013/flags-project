@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Search.css';
+import React, { useState } from "react";
+import { searchCountriesByName } from "../../Api/api";
+import "./Search.css";
 
 function SearchInput({ onSearch }) {
-  const [searchText, setSearchText] = useState('');
-
+  const [searchText, setSearchText] = useState("");
   const handleInputChange = (event) => {
     setSearchText(event.target.value);
   };
 
-  const handleSearchAPI = () => {
+  const handleSearchAPI = async () => {
+    // Mark the function as async
     if (searchText.trim() === "") {
       return;
     }
-
-    axios.get(`https://restcountries.com/v3.1/name/${searchText}`)
-      .then(response => {
-        onSearch(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching country data:", error);
-      });
+    try {
+      const response = await searchCountriesByName(searchText);
+      onSearch(response);
+    } catch (error) {
+      console.error("Error fetching country data:", error);
+    }
   };
 
   return (
@@ -29,12 +27,11 @@ function SearchInput({ onSearch }) {
       <input
         type="text"
         className="searchBox"
-        placeholder="Search by country name"
+        placeholder="Search by country name..."
         value={searchText}
         onChange={handleInputChange}
-        onClick={handleSearchAPI} 
+        onInput={handleSearchAPI}
       />
-
     </div>
   );
 }

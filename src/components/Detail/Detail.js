@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./detail.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { fetchCountryDetailsByCode } from "../../Api/api";
 import { useLocation } from "react-router";
 
 function DetailsPage() {
@@ -13,39 +13,34 @@ function DetailsPage() {
   const [borderCountryNames, setBorderCountryNames] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-
   useEffect(() => {
-    axios
-      .get(`${apiBaseUrl}alpha/${countryCode}`)
-      .then((response) => {
-        const fetchedCountryData = response.data[0];
+    const fetchData = async () => {
+      try {
+        const fetchedCountryData = await fetchCountryDetailsByCode(countryCode);
         setCountryData(fetchedCountryData);
 
         const borderPromises = fetchedCountryData.borders?.map(
-          (borderCountryCode) =>
-            axios.get(`${apiBaseUrl}alpha/${borderCountryCode}`)
+          async (borderCountryCode) => {
+            const borderCountryData = await fetchCountryDetailsByCode(
+              borderCountryCode
+            );
+            return borderCountryData.name.common;
+          }
         );
 
         if (borderPromises) {
-          Promise.all(borderPromises)
-            .then((responses) => {
-              const borderNames = responses.map(
-                (response) => response.data[0].name.common
-              );
-              setBorderCountryNames(borderNames);
-            })
-            .catch((error) => {
-              console.error(error);
-            });
+          const borderCountryNames = await Promise.all(borderPromises);
+          setBorderCountryNames(borderCountryNames);
         }
 
         setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(error);
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, [countryCode]);
 
   if (loading) {
