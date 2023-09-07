@@ -1,7 +1,8 @@
-.FilterBox {
+/* .FilterBox {
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 12em;
   cursor: pointer;
   float: right;
@@ -26,9 +27,110 @@
   background: white;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
   color: rgb(85, 81, 81);
-}
+} */
+
 
 .selectList {
+  position: absolute;
+  background: white;
+
+  list-style: none;
+  padding: 10px 0;
+  min-width: 170px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+  display: none; 
+}
+
+.selectList li:hover {
+  background: rgb(75, 144, 205);
+  color: white;
+}
+
+/* Add styles for the custom select */
+.custom-select {
+  position: relative;
+  margin-right: 12px;
+}
+
+
+.downIcon {
+  position: relative;
+  top: -37px;
+  margin-left: 130px;
+  color: rgb(74, 73, 73);
+}
+
+.custom-select .selected-option {
+  width: 180px;
+  height: 47px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  background: white;
+  
+  color: rgb(85, 81, 81);
+  cursor: pointer;
+}
+.custom-select .select-list {
+  position: absolute;
+  overflow: hidden;
+  width: 180px;
+  list-style: none;
+  margin-top: 1px;
+  padding: 10px 0;
+  color: rgb(85, 81, 81);
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* background: white; */
+}
+
+.custom-select .select-list li {
+  display: block;
+  text-indent: 10%;
+  padding: 5px 15px;
+  padding-left: 20px;
+  color: rgb(57, 57, 57);
+  cursor: pointer;
+  background: white;
+}
+
+.custom-select .select-list li:hover {
+  background: rgb(75, 144, 205);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-select .selected-option {
+    max-width: 100%;
+  }
+
+  .custom-select .select-list {
+    margin-top: 10px;
+    min-width: 170px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding:  0;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .custom-select .select-list {
+    margin-top: 5%;
+    min-width: 170px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 0;
+    background-color: white;
+   
+  }
+}
+
+/* .selectList {
   position: relative;
   background: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,7 +154,7 @@
 ul.selectList {
   position: absolute;
   overflow: hidden;
-  overflow-y: auto;
+  
   width: 180px;
   border-radius: 2px;
   list-style: none;
@@ -124,4 +226,5 @@ ul.selectList {
     top: -37px;
     bottom: 15px;
   }
-}
+} */
+
