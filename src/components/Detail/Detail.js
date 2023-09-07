@@ -68,7 +68,7 @@ function DetailsPage() {
             <div className="wrapInsideDetail">
               <div className="leftInsideDetail">
                 <p>
-                  <strong>Native Name:</strong> {countryData.name?.official}
+                  <strong>Native Name:</strong> {countryData.name?.common}
                 </p>
                 <p>
                   <strong>Population:</strong>{" "}
@@ -109,7 +109,7 @@ function DetailsPage() {
             </div>
             <div className="borderCountries">
               <div className="title">Border Countries:</div>
-              <div className="wrapBorderCountries">
+              <span className="wrapBorderCountries">
                 {borderCountryNames.map((borderCountryName, index) => (
                   <Link
                     to={`/border-details?code=${countryData.borders[index]}`}
@@ -118,7 +118,7 @@ function DetailsPage() {
                     {borderCountryName}
                   </Link>
                 ))}
-              </div>
+              </span>
             </div>
           </div>
         </div>

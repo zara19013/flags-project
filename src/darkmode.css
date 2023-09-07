@@ -55,16 +55,40 @@
 .App.dark .searchIcon {
   color: rgb(206, 206, 206);
 }
+.App.dark .custom-select .selected-option {
 
-.App.dark .selectTitle,
-.App.dark .selectList {
   background-color: hsl(209, 23%, 22%);
-  box-shadow: 3px 3px 4px shadowInput;
+  box-shadow: 3px 3px 4px shadow;
   color: rgb(206, 206, 206);
+  
 }
 .App.dark .downIcon {
   color: rgb(206, 206, 206);
 }
+.App.dark .custom-select .select-list {
+  color: rgb(255, 255, 255);
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 3px 3px 4px shadow;
+}
+.App.dark .custom-select .select-list li {
+  color: rgb(206, 206, 206);
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 3px 3px 4px shadow;
+}
+.App.dark .custom-select .select-list li:hover {
+  background: rgb(75, 144, 205);
+  color: white;
+}
+
+/* .App.dark .selectTitle,
+.App.dark .selectList {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 3px 3px 4px shadowInput;
+  color: rgb(206, 206, 206);
+} */
+/* .App.dark .downIcon {
+  color: rgb(206, 206, 206);
+} */
 
 .App.dark .backBtn,
 .App.dark .borderCountry {
@@ -73,10 +97,10 @@
   color: rgb(33, 36, 43);
 }
 
-.App.dark .selectList li {
+/* .App.dark .selectList li {
   background: hsl(207, 26%, 17%);
   color: rgb(206, 206, 206);
-}
+} */
 
 .App.dark .backBtn {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

@@ -24,11 +24,11 @@
     }
   }
   .description {
-    font-size: 17px;
+    font-size: 14px;
     padding: 5px 15px;
     font-family: "Nunito Sans", sans-serif;
     .countryName {
-      font-weight: 700;
+      font-weight: 800;
       padding-bottom: 5px;
       font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
